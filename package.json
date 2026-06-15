@@ -1,0 +1,28 @@
+{
+  "name": "cortex-plugin-zoom-transcriber",
+  "version": "1.0.0",
+  "description": "Join meetings as bot, transcribe real-time, generate summaries",
+  "type": "module",
+  "main": "mod.ts",
+  "scripts": {
+    "dev": "deno run --watch --allow-all mod.ts",
+    "test": "deno test --allow-all test/**/*.test.ts",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
+    "lint": "deno lint",
+    "validate": "deno check mod.ts && deno fmt --check && deno lint"
+  },
+  "keywords": ["cortex", "plugin", "cortex-plugin", "zoom", "transcription", "meetings", "esm"],
+  "author": "CortexPrism",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CortexPrism/cortex-plugin-zoom-transcriber.git"
+  },
+  "dependencies": {
+    "@cortexprism/plugin-sdk": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

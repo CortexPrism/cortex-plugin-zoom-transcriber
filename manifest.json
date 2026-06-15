@@ -1,0 +1,170 @@
+{
+  "name": "cortex-plugin-zoom-transcriber",
+  "version": "1.0.0",
+  "description": "Join meetings as bot, transcribe real-time, generate summaries",
+  "kind": "esm",
+  "entryPoint": "mod.ts",
+  "runtime": "deno",
+  "author": "CortexPrism",
+  "license": "MIT",
+  "repository": "https://github.com/CortexPrism/cortex-plugin-zoom-transcriber",
+  "homepage": "",
+  "capabilities": [
+    "tools",
+    "shell:run",
+    "network:fetch"
+  ],
+  "tools": [
+    {
+      "name": "zoom_join_meeting",
+      "description": "Join a Zoom meeting as a bot",
+      "params": [
+        {
+          "name": "meeting_id",
+          "type": "string",
+          "description": "Zoom meeting ID",
+          "required": true
+        },
+        {
+          "name": "meeting_password",
+          "type": "string",
+          "description": "Zoom meeting password",
+          "required": false
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "Display name for the bot",
+          "required": false,
+          "default": "CortexPrism Bot"
+        }
+      ]
+    },
+    {
+      "name": "zoom_record",
+      "description": "Start or stop recording a Zoom meeting",
+      "params": [
+        {
+          "name": "meeting_id",
+          "type": "string",
+          "description": "Zoom meeting ID",
+          "required": true
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "description": "Recording action",
+          "required": true,
+          "enum": ["start", "stop"]
+        }
+      ]
+    },
+    {
+      "name": "zoom_transcribe",
+      "description": "Transcribe a Zoom recording",
+      "params": [
+        {
+          "name": "recording_file",
+          "type": "string",
+          "description": "Path to recording file",
+          "required": true
+        },
+        {
+          "name": "language",
+          "type": "string",
+          "description": "Language code for transcription",
+          "required": false,
+          "default": "en"
+        },
+        {
+          "name": "output_format",
+          "type": "string",
+          "description": "Output format for transcript",
+          "required": false,
+          "enum": ["text", "srt", "vtt"],
+          "default": "text"
+        }
+      ]
+    },
+    {
+      "name": "zoom_generate_summary",
+      "description": "Generate a meeting summary from transcript",
+      "params": [
+        {
+          "name": "transcript",
+          "type": "string",
+          "description": "Meeting transcript text",
+          "required": true
+        },
+        {
+          "name": "meeting_title",
+          "type": "string",
+          "description": "Title of the meeting",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "zoom_extract_actions",
+      "description": "Extract action items from meeting transcript",
+      "params": [
+        {
+          "name": "transcript",
+          "type": "string",
+          "description": "Meeting transcript text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "ui": {
+    "section": "Zoom Transcriber",
+    "fields": [
+      {
+        "key": "zoomClientId",
+        "label": "Zoom Client ID",
+        "type": "text",
+        "description": "Zoom app client ID",
+        "required": true
+      },
+      {
+        "key": "zoomClientSecret",
+        "label": "Zoom Client Secret",
+        "type": "secret",
+        "description": "Zoom app client secret",
+        "required": true
+      },
+      {
+        "key": "zoomAccountId",
+        "label": "Zoom Account ID",
+        "type": "text",
+        "description": "Zoom account ID",
+        "required": true
+      },
+      {
+        "key": "defaultLanguage",
+        "label": "Default Language",
+        "type": "text",
+        "description": "Default transcription language code",
+        "required": false,
+        "default": "en"
+      },
+      {
+        "key": "autoRecord",
+        "label": "Auto Record",
+        "type": "boolean",
+        "description": "Automatically start recording when joining",
+        "required": false,
+        "default": false
+      }
+    ]
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "cortex": ">=1.0.0"
+  },
+  "aiDisclosure": {
+    "tools": ["Claude Code (Anthropic)"],
+    "humanReview": true
+  }
+}
