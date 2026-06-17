@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-zoom-transcriber",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Join meetings as bot, transcribe real-time, generate summaries",
   "kind": "esm",
   "entryPoint": "mod.ts",
