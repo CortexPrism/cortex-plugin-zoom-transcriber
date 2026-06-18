@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-zoom-transcriber",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Join meetings as bot, transcribe real-time, generate summaries",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -8,7 +8,7 @@
   "author": "CortexPrism",
   "license": "MIT",
   "repository": "https://github.com/CortexPrism/cortex-plugin-zoom-transcriber",
-  "homepage": "",
+  "homepage": "https://github.com/CortexPrism/cortex-plugin-zoom-transcriber",
   "capabilities": [
     "tools",
     "shell:run",
@@ -55,7 +55,10 @@
           "type": "string",
           "description": "Recording action",
           "required": true,
-          "enum": ["start", "stop"]
+          "enum": [
+            "start",
+            "stop"
+          ]
         }
       ]
     },
@@ -81,7 +84,11 @@
           "type": "string",
           "description": "Output format for transcript",
           "required": false,
-          "enum": ["text", "srt", "vtt"],
+          "enum": [
+            "text",
+            "srt",
+            "vtt"
+          ],
           "default": "text"
         }
       ]
@@ -118,44 +125,48 @@
     }
   ],
   "ui": {
-    "section": "Zoom Transcriber",
-    "fields": [
+    "settings": [
       {
-        "key": "zoomClientId",
-        "label": "Zoom Client ID",
-        "type": "text",
-        "description": "Zoom app client ID",
-        "required": true
-      },
-      {
-        "key": "zoomClientSecret",
-        "label": "Zoom Client Secret",
-        "type": "secret",
-        "description": "Zoom app client secret",
-        "required": true
-      },
-      {
-        "key": "zoomAccountId",
-        "label": "Zoom Account ID",
-        "type": "text",
-        "description": "Zoom account ID",
-        "required": true
-      },
-      {
-        "key": "defaultLanguage",
-        "label": "Default Language",
-        "type": "text",
-        "description": "Default transcription language code",
-        "required": false,
-        "default": "en"
-      },
-      {
-        "key": "autoRecord",
-        "label": "Auto Record",
-        "type": "boolean",
-        "description": "Automatically start recording when joining",
-        "required": false,
-        "default": false
+        "section": "Zoom Transcriber",
+        "fields": [
+          {
+            "key": "zoomClientId",
+            "label": "Zoom Client ID",
+            "type": "text",
+            "description": "Zoom app client ID",
+            "required": true
+          },
+          {
+            "key": "zoomClientSecret",
+            "label": "Zoom Client Secret",
+            "type": "secret",
+            "description": "Zoom app client secret",
+            "required": true
+          },
+          {
+            "key": "zoomAccountId",
+            "label": "Zoom Account ID",
+            "type": "text",
+            "description": "Zoom account ID",
+            "required": true
+          },
+          {
+            "key": "defaultLanguage",
+            "label": "Default Language",
+            "type": "text",
+            "description": "Default transcription language code",
+            "required": false,
+            "default": "en"
+          },
+          {
+            "key": "autoRecord",
+            "label": "Auto Record",
+            "type": "boolean",
+            "description": "Automatically start recording when joining",
+            "required": false,
+            "default": false
+          }
+        ]
       }
     ]
   },
@@ -164,7 +175,9 @@
     "cortex": ">=1.0.0"
   },
   "aiDisclosure": {
-    "tools": ["Claude Code (Anthropic)"],
+    "tools": [
+      "Claude Code (Anthropic)"
+    ],
     "humanReview": true
   }
 }
