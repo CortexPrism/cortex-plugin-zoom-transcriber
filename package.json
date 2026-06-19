@@ -12,7 +12,15 @@
     "lint": "deno lint",
     "validate": "deno check mod.ts && deno fmt --check && deno lint"
   },
-  "keywords": ["cortex", "plugin", "cortex-plugin", "zoom", "transcription", "meetings", "esm"],
+  "keywords": [
+    "cortex",
+    "plugin",
+    "cortex-plugin",
+    "zoom",
+    "transcription",
+    "meetings",
+    "esm"
+  ],
   "author": "CortexPrism",
   "license": "MIT",
   "repository": {
