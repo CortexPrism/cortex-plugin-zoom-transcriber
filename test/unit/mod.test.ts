@@ -10,6 +10,7 @@ const mockContext: PluginContext = {
     set: async () => {},
   },
   config: {},
+  logger: { info: () => {}, warn: () => {}, error: () => {}, debug: () => {} },
 };
 
 function findTool(name: string) {
