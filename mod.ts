@@ -1,9 +1,4 @@
-import type {
-  PluginContext,
-  Tool,
-  ToolCallResult,
-  ToolContext,
-} from "./types.ts";
+import type { PluginContext, Tool, ToolCallResult } from "cortex/plugins";
 
 let pluginConfig: Record<string, unknown> = {};
 
@@ -43,7 +38,7 @@ const zoomJoinMeetingTool: Tool = {
   },
   execute: async (
     args: Record<string, unknown>,
-    _ctx: ToolContext,
+    _ctx: PluginContext,
   ): Promise<ToolCallResult> => {
     const start = Date.now();
     try {
@@ -172,7 +167,7 @@ const zoomRecordTool: Tool = {
   },
   execute: async (
     args: Record<string, unknown>,
-    _ctx: ToolContext,
+    _ctx: PluginContext,
   ): Promise<ToolCallResult> => {
     const start = Date.now();
     try {
@@ -309,7 +304,7 @@ const zoomTranscribeTool: Tool = {
   },
   execute: async (
     args: Record<string, unknown>,
-    _ctx: ToolContext,
+    _ctx: PluginContext,
   ): Promise<ToolCallResult> => {
     const start = Date.now();
     try {
@@ -402,7 +397,7 @@ const zoomGenerateSummaryTool: Tool = {
   },
   execute: async (
     args: Record<string, unknown>,
-    _ctx: ToolContext,
+    _ctx: PluginContext,
   ): Promise<ToolCallResult> => {
     const start = Date.now();
     try {
@@ -467,7 +462,7 @@ const zoomExtractActionsTool: Tool = {
   },
   execute: async (
     args: Record<string, unknown>,
-    _ctx: ToolContext,
+    _ctx: PluginContext,
   ): Promise<ToolCallResult> => {
     const start = Date.now();
     try {

@@ -1,6 +1,6 @@
 {
   "name": "cortex-plugin-zoom-transcriber",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Join meetings as bot, transcribe real-time, generate summaries",
   "kind": "esm",
   "entryPoint": "mod.ts",
@@ -36,7 +36,7 @@
           "type": "string",
           "description": "Display name for the bot",
           "required": false,
-          "default": "CortexPrism Bot"
+          "defaultValue": "CortexPrism Bot"
         }
       ]
     },
@@ -77,7 +77,7 @@
           "type": "string",
           "description": "Language code for transcription",
           "required": false,
-          "default": "en"
+          "defaultValue": "en"
         },
         {
           "name": "output_format",
@@ -89,7 +89,7 @@
             "srt",
             "vtt"
           ],
-          "default": "text"
+          "defaultValue": "text"
         }
       ]
     },
@@ -156,7 +156,7 @@
             "type": "text",
             "description": "Default transcription language code",
             "required": false,
-            "default": "en"
+            "defaultValue": "en"
           },
           {
             "key": "autoRecord",
@@ -164,7 +164,7 @@
             "type": "boolean",
             "description": "Automatically start recording when joining",
             "required": false,
-            "default": false
+            "defaultValue": false
           }
         ]
       }
@@ -172,7 +172,7 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "cortex": ">=1.0.0"
+    "cortex": ">=0.51.0"
   },
   "aiDisclosure": {
     "tools": [
